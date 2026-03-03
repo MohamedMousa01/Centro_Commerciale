@@ -4,14 +4,16 @@ public abstract class Lavoratore {
 
     protected String nome;
     protected String cognome;
+    private Negozio negozio;
 
-    public Lavoratore(String nome, String cognome){
+    public Lavoratore(String nome, String cognome, Negozio negozio){
         this.nome = nome;
         this.cognome = cognome;
+        this.negozio = negozio;
     }
 
-    public abstract boolean handleItemAdd();
-    public abstract boolean handleItemRemove();
+    public abstract boolean handleItemAdd(Item item);
+    public abstract boolean handleItemRemove(Item item);
 
     public String getNome() {
         return nome;

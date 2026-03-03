@@ -2,17 +2,17 @@ package it.prova.models;
 
 public class Commesso extends Lavoratore{
 
-    public Commesso(String nome, String cognome){
-        super(nome, cognome);
+    public Commesso(String nome, String cognome, Negozio negozio){
+        super(nome, cognome,negozio);
     }
 
     @Override
-    public boolean handleItemAdd() {
-        return false;
+    public boolean handleItemAdd(Item item) {
+        
     }
 
     @Override
-    public boolean handleItemRemove() {
+    public boolean handleItemRemove(Item item) {
         return false;
     }
 }
