@@ -26,6 +26,8 @@ void main() {
     lavoratori.add(personaleAmm1);
     lavoratori.add(boss);
 
+    negozio1.setLavoratori(lavoratori);
+
     List<Item> items = new ArrayList<>();
     Item prodotto1 = new Item("1", "telefono", 200, negozio1);
     Item prodotto2 = new Item("2", "pc", 900, negozio1);
@@ -35,5 +37,6 @@ void main() {
     System.out.println(negozio1.addToItems(commesso1,prodotto1));
     System.out.println(negozio1.addToItems(commesso2,prodotto2));
     System.out.println(negozio1.addToItems(boss,prodotto1));
+    System.out.println(negozio1.removeFromItems(commesso2, prodotto2));
 
 }
