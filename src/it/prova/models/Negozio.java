@@ -8,6 +8,7 @@ public class Negozio {
     private String ragioneSociale;
     private String partitaIva;
     private List<Lavoratore> lavoratori = new ArrayList<>();
+    private List<Item> item = new ArrayList<>();
 
     public Negozio(String ragioneSociale, String partitaIva){
         this.ragioneSociale = ragioneSociale;
