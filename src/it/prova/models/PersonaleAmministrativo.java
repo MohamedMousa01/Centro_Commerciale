@@ -9,7 +9,8 @@ public class PersonaleAmministrativo extends Lavoratore{
 
     @Override
     public boolean handleItemAdd(Item item) {
-        return false;
+        this.negozio.getItems().add(item);
+        return true;
     }
 
     @Override

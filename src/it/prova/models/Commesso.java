@@ -8,11 +8,13 @@ public class Commesso extends Lavoratore{
 
     @Override
     public boolean handleItemAdd(Item item) {
-        
+        this.negozio.getItems().add(item);
+        return true;
     }
 
     @Override
     public boolean handleItemRemove(Item item) {
-        return false;
+        this.negozio.getItems().remove(item);
+        return true;
     }
 }

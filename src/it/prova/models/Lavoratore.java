@@ -4,7 +4,7 @@ public abstract class Lavoratore {
 
     protected String nome;
     protected String cognome;
-    private Negozio negozio;
+    protected Negozio negozio;
 
     public Lavoratore(String nome, String cognome, Negozio negozio){
         this.nome = nome;

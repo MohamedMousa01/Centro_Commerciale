@@ -8,7 +8,7 @@ public class Negozio {
     private String ragioneSociale;
     private String partitaIva;
     private List<Lavoratore> lavoratori = new ArrayList<>();
-    private List<Item> item = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
     private CentroCommerciale centroCommerciale;
 
     public Negozio(String ragioneSociale, String partitaIva){
@@ -17,35 +17,34 @@ public class Negozio {
     }
 
     public boolean addToItems(Lavoratore lavoratore, Item item){
-        if(!lavoratori.contains(lavoratore)){
+        if(!this.getLavoratori().contains(lavoratore) || this.items.contains(item) ){
             return false;
         }
-        if( lavoratore instanceof Commesso){
-            return true;
-        }
-        if( lavoratore instanceof Boss){
-            return false;
-        }
-        if( lavoratore instanceof PersonaleAmministrativo){
-            return true;
-        }
-        return false;
+        return lavoratore.handleItemAdd(item);
+
     }
 
     public boolean removeFromItems(Lavoratore lavoratore, Item item){
-        if(!lavoratori.contains(lavoratore)){
+        if(!this.getLavoratori().contains(lavoratore) || !this.items.contains(item)){
             return false;
         }
-        if( lavoratore instanceof Commesso){
-            return true;
-        }
-        if( lavoratore instanceof Boss){
-            return false;
-        }
-        if( lavoratore instanceof PersonaleAmministrativo){
-            return false;
-        }
-        return false;
+        return lavoratore.handleItemRemove(item);
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public CentroCommerciale getCentroCommerciale() {
+        return centroCommerciale;
+    }
+
+    public void setCentroCommerciale(CentroCommerciale centroCommerciale) {
+        this.centroCommerciale = centroCommerciale;
     }
 
     public String getPartitaIva() {

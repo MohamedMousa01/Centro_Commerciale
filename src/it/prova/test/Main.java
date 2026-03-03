@@ -1,5 +1,7 @@
 import it.prova.models.*;
 
+import java.sql.SQLOutput;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
@@ -24,8 +26,14 @@ void main() {
     lavoratori.add(personaleAmm1);
     lavoratori.add(boss);
 
+    List<Item> items = new ArrayList<>();
+    Item prodotto1 = new Item("1", "telefono", 200, negozio1);
+    Item prodotto2 = new Item("2", "pc", 900, negozio1);
+    Item prodotto3 = new Item("3", "tv", 1200, negozio1);
 
-
-
+    System.out.println("----Inizio test----");
+    System.out.println(negozio1.addToItems(commesso1,prodotto1));
+    System.out.println(negozio1.addToItems(commesso2,prodotto2));
+    System.out.println(negozio1.addToItems(boss,prodotto1));
 
 }
